@@ -1,9 +1,9 @@
 
-/* Universidad de Los Andes
- * Sincronizacion de procesos
- * Asignatura: Sistemas Operativos
- * Autor: Alvaro Araujo
- * Fecha: 20/04/2018
+/* universidad de los andes
+ * sincronizacion de procesos
+ * asignatura: sistemas operativos
+ * autor: alvaro araujo
+ * fecha: 20/04/2018
  */
 
 #include <stdio.h>
@@ -44,14 +44,14 @@ int main()
     exit(EXIT_FAILURE);
   }
 
-  /* Busqueda del segmento de memoria compartida */
+  /* busqueda del segmento de memoria compartida */
   if((shmem = shmget(id_shmem, sizeof(shmem_data), 0666)) < 0)
   {
 		perror("\tshmget");
 		exit(EXIT_FAILURE);
 	}
 
-  /* Vinculacion al segmento */
+  /* vinculacion al segmento */
 	if((pto_shmem = shmat(shmem, NULL, 0)) == (char *) -1)
 	{
 		perror("\tshmat");
